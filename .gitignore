@@ -2,7 +2,6 @@
 .gradle/
 .idea/
 build/
-gradle/
 insultr.ipr
 insultr.iws
 src/main/resources/
