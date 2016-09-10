@@ -1,0 +1,2 @@
+# insultr
+Shakespearian insult generator 
