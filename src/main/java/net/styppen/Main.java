@@ -38,6 +38,7 @@ public class Main
 
    public static void main(String[] args)
    {
+      port(getHerokuAssignedPort());
       externalStaticFileLocation("public");
       post("/insult", ((request, response) -> {
          JSONObject obj = insultMe();
@@ -56,6 +57,14 @@ public class Main
       obj.put("second", secondAdjectives.get(secondAdjectiveIdx));
       obj.put("noun", nouns.get(noundIdx));
       return obj;
+   }
+
+   static int getHerokuAssignedPort() {
+      ProcessBuilder processBuilder = new ProcessBuilder();
+      if (processBuilder.environment().get("PORT") != null) {
+         return Integer.parseInt(processBuilder.environment().get("PORT"));
+      }
+      return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
    }
 
 }
