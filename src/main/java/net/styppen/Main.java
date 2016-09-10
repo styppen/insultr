@@ -31,7 +31,7 @@ public class Main
 
    private static List<String> nouns = Arrays.asList("apple-john","baggage","barnacle","bladder","boar-pig","bugbear","bum-bailey","canker-blossom","strumpet",
                                                      "clack-dish","clotpole","coxcomb","codpiece","death-token","dewberry","flap-dragon","flax-wench","varlot","wagtail",
-                                                     "flirt-gill","foot-licker","fustilarianƒ","giglet","gudgeon","haggard","harpy","hedge-pig","horn-beast","vassal",
+                                                     "flirt-gill","foot-licker","fustilarian","giglet","gudgeon","haggard","harpy","hedge-pig","horn-beast","vassal",
                                                      "hugger-mugger","joithead","lewdster","lout","maggot-pie","malt-worm","mammet","measle","minnow","miscreant",
                                                      "moldwarp","mumble-news","nut-hook","pigeon-egg","pignut","puttock","pumpion","ratsbane","scut","skainsmate","whey-face"
    );
