@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Insultr</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="lib/clipboard.min.js"></script>
+
+</head>
+<body>
+
+<div class="container" ng-app="Insultr" ng-controller="InsultController" ng-init="insult()">
+
+    <div class="row">
+        <div class="col-md-12 centered text-center">
+            <h1 class="fancy">Thou </h1>
+            <h1 class="fancy" id="foo">{{first + " " + second + " " + noun}}</h1>
+            <button type="button" class="btn btn-lg center-block" data-clipboard-target="#foo"><span class="text-copy">Copy to clipboard</span></button>
+        </div>
+    </div>
+
+
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted center">&copy; <a href="https://github.com/styppen">styppen</a> 2016</p>
+    </div>
+</footer>
+
+</body>
+</html>

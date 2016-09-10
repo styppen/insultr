@@ -1,0 +1,50 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+group 'net.styppen'
+version '1.0-SNAPSHOT'
+
+
+mainClassName = "net.styppen.Main"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+
+    compile group: 'com.sparkjava',         name:'spark-core',         version: '2.3'
+    compile group: 'org.json',              name:'json',               version: '20160212'
+    compile group: 'log4j',                 name: 'log4j',             version: '1.2.17'
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url "http://repo.spring.io/libs-release" }
+        mavenLocal()
+    }
+
+    dependencies {
+        classpath('org.hidetake:gradle-ssh-plugin:2.4.0')
+    }
+}
+
+task stage {
+    dependsOn installDist
+}
+
+task copyConfig(type: Copy) {
+    from 'config'
+    into 'build/install/iris-gateway/bin/config'
+}
+
+
+// after the installDist is executed, copy the config files
+installDist.finalizedBy copyConfig
+
+
+
