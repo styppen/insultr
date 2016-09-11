@@ -1,6 +1,23 @@
 .fancy {
     font-family: 'Cinzel Decorative', cursive;
-    font-size: 35pt;
+    font-size: 25pt;
+}
+
+.about-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 25pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+.about-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12pt;
+    text-align: center;
+}
+
+.about-top {
+    margin-top: 80px;
 }
 
 .fancy::selection {
@@ -23,12 +40,13 @@
     background-color: #f5f5f5;
 }
 
-.center {
-    text-align: center;
+.v-align {
+    /*text-align: center;*/
     margin-top: 10px;
 }
 
 .btn {
+    margin-top: 30px;
     background-color: white;
     border-color: gainsboro;
     border-radius: 0px;

@@ -1,5 +1,6 @@
 package net.styppen;
 
+import org.apache.log4j.Logger;
 import org.json.JSONObject;
 
 import java.util.Arrays;
@@ -33,11 +34,28 @@ public class Main
                                                      "clack-dish","clotpole","coxcomb","codpiece","death-token","dewberry","flap-dragon","flax-wench","varlot","wagtail",
                                                      "flirt-gill","foot-licker","fustilarian","giglet","gudgeon","haggard","harpy","hedge-pig","horn-beast","vassal",
                                                      "hugger-mugger","joithead","lewdster","lout","maggot-pie","malt-worm","mammet","measle","minnow","miscreant",
-                                                     "moldwarp","mumble-news","nut-hook","pigeon-egg","pignut","puttock","pumpion","ratsbane","scut","skainsmate","whey-face"
-   );
+                                                     "moldwarp","mumble-news","nut-hook","pigeon-egg","pignut","puttock","pumpion","ratsbane","scut","skainsmate","whey-face");
+
+   private static Logger logger = Logger.getLogger(Main.class);
 
    public static void main(String[] args)
    {
+
+      logger.info("");
+      logger.info("==============================================================================================");
+      logger.info("    ___          /__/\\         /  /\\         /__/\\                        ___        /  /\\    ");
+      logger.info("   /  /\\         \\  \\:\\       /  /:/_        \\  \\:\\                      /  /\\      /  /::\\   ");
+      logger.info("  /  /:/          \\  \\:\\     /  /:/ /\\        \\  \\:\\    ___     ___     /  /:/     /  /:/\\:\\  ");
+      logger.info(" /__/::\\      _____\\__\\:\\   /  /:/ /::\\   ___  \\  \\:\\  /__/\\   /  /\\   /  /:/     /  /:/~/:/  ");
+      logger.info(" \\__\\/\\:\\__  /__/::::::::\\ /__/:/ /:/\\:\\ /__/\\  \\__\\:\\ \\  \\:\\ /  /:/  /  /::\\    /__/:/ /:/___");
+      logger.info("    \\  \\:\\/\\ \\  \\:\\~~\\~~\\/ \\  \\:\\/:/~/:/ \\  \\:\\ /  /:/  \\  \\:\\  /:/  /__/:/\\:\\   \\  \\:\\/:::::/");
+      logger.info("     \\__\\::/  \\  \\:\\  ~~~   \\  \\::/ /:/   \\  \\:\\  /:/    \\  \\:\\/:/   \\__\\/  \\:\\   \\  \\::/~~~~ ");
+      logger.info("     /__/:/    \\  \\:\\        \\__\\/ /:/     \\  \\:\\/:/      \\  \\::/         \\  \\:\\   \\  \\:\\     ");
+      logger.info("     \\__\\/      \\  \\:\\         /__/:/       \\  \\::/        \\__\\/           \\__\\/    \\  \\:\\    ");
+      logger.info("                 \\__\\/         \\__\\/         \\__\\/                                   \\__\\/    ");
+      logger.info("==============================================================================================");
+      logger.info("");
+
       port(getHerokuAssignedPort());
       externalStaticFileLocation("public");
       post("/insult", ((request, response) -> {
@@ -56,6 +74,7 @@ public class Main
       obj.put("first", firstAdjectives.get(firstAdjectiveIdx));
       obj.put("second", secondAdjectives.get(secondAdjectiveIdx));
       obj.put("noun", nouns.get(noundIdx));
+      logger.info("Someone will be called: [" + obj.toString() + "]");
       return obj;
    }
 

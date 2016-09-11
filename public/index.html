@@ -6,7 +6,11 @@
     <title>Insultr</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="style.css"/>
+
     <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="app.js"></script>
     <script src="lib/clipboard.min.js"></script>
@@ -16,11 +20,20 @@
 
 <div class="container" ng-app="Insultr" ng-controller="InsultController" ng-init="insult()">
 
+    <div class="row about-top">
+        <div class="col-md-12">
+            <h1 class="about-title">I N S U L T R</h1>
+            <p class="about-text">Ever felt like your insult game is low? Ever felt like someone deserves something more than just a mundane insult?</p>
+            <p class="about-text">With Insultr you will be able to insult people with, up till now, unprecedented wittiness and pay homage to world's greatest writer!</p>
+        </div>
+    </div>
+
     <div class="row">
-        <div class="col-md-12 centered text-center">
+        <div class="col-md-12 centered text-center" ng-show="loaded">
             <h1 class="fancy">Thou </h1>
             <h1 class="fancy" id="foo">{{first + " " + second + " " + noun}}</h1>
-            <button type="button" class="btn btn-lg center-block" data-clipboard-target="#foo"><span class="text-copy">Copy to clipboard</span></button>
+            <button type="button" class="btn btn-lg" ng-click="insult()"><span class="text-copy">Insult</span></button>
+            <button type="button" class="btn btn-lg " data-clipboard-target="#foo"><span class="text-copy">Copy</span></button>
         </div>
     </div>
 
@@ -29,8 +42,12 @@
 </div>
 
 <footer class="footer">
-    <div class="container">
-        <p class="text-muted center">&copy; <a href="https://github.com/styppen">styppen</a> 2016</p>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <p class="text-muted v-align text-center">&copy; <a href="https://github.com/styppen">styppen</a> 2016</p>
+            </div>
+        </div>
     </div>
 </footer>
 
