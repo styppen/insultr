@@ -56,3 +56,7 @@
 .text-copy {
     color: dimgray;
 }
+
+.about-text a {
+    color: darkgray;
+}
